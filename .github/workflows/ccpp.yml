@@ -78,6 +78,14 @@ jobs:
            rm -rfv  default-settings
            rm -rfv   autocore
            # ==========以上是示范如何加入tar.xz解包和拉github源码编译==========
+      - name: Custom profile 5
+        run: |   
+           rm -rf package/network/config/firewall
+           svn checkout https://github.com/coolsnowwolf/lede/trunk/package/network/config/firewall package/network/config/firewall
+      - name: Custom profile 6
+        run: | 
+           sed -i 's/local e=require("luci.model.ipkg")/-- local e=require("luci.model.ipkg")--/g' package/lean/luci-app-frpc/luasrc/model/cbi/frp/frp.lua     
+           
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
