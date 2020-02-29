@@ -94,8 +94,8 @@ jobs:
            
       - name: 拉取github插件包
         run: |   
-           git clone  https://github.com/frainzy1477/luci-app-clash package/lean
-           git clone  https://github.com/vernesong/OpenClash package/lean
+           git clone  https://github.com/frainzy1477/luci-app-clash package/lean/luci-app-clash
+           git clone  https://github.com/vernesong/OpenClash package/lean/OpenClash
            
           #          =========================================
           #         |                                         |
