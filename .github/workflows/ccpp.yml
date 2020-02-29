@@ -107,14 +107,9 @@ jobs:
           #         |                                         |
           #          =========================================
           #
-          #
+          
+
       - name: Custom profile 12
-        run: |   
-           rm -rf package/network/config/firewall
-      - name: Custom profile 13
-        run: |       
-           svn checkout https://github.com/coolsnowwolf/lede/trunk/package/network/config/firewall package/network/config/firewall
-      - name: Custom profile 14
         run: | 
            sed -i 's/local e=require("luci.model.ipkg")/-- local e=require("luci.model.ipkg")--/g' package/lean/luci-app-frpc/luasrc/model/cbi/frp/frp.lua     
            
