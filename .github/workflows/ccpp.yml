@@ -83,7 +83,7 @@ jobs:
       - name: Custom profile 11
         run: |
           sed -i 's/default "5"/default "0"/g' config/Config-images.in
-      - name: 自定义插件
+      - name: 加载lean插件包
         run: |   
           svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean  package/lean  
            
@@ -91,7 +91,12 @@ jobs:
 
            rm -rfv  default-settings
            rm -rfv   autocore
-             
+           
+      - name: 拉取github插件包
+        run: |   
+           git clone  https://github.com/frainzy1477/luci-app-clash package/lean
+           git clone  https://github.com/vernesong/OpenClash package/lean
+           
           #          =========================================
           #         |                                         |
           #         |         此处可以任意添加源码              |
