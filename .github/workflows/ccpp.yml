@@ -53,34 +53,31 @@ jobs:
         run: |
           sed -i "s/base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd urandom-seed urngd/base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd block-mount coremark lm-sensors kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw wget libustream-openssl ca-certificates default-settings luci luci-app-ddns luci-app-sqm luci-app-upnp luci-app-adbyby-plus luci-app-autoreboot luci-app-filetransfer luci-app-vsftpd ddns-scripts_aliyun luci-app-SSR-plus luci-app-pptp-server luci-app-arpbind luci-app-vlmcsd luci-app-wifischedule luci-app-wol luci-app-ramfree luci-app-sfe luci-app-flowoffload luci-app-nlbwmon luci-app-usb-printer luci-app-accesscontrol  luci-app-xlnetacc/g"  include/target.mk
       - name: Custom profile 2
-        run: |   
-          sed -i 's/block-mount fdisk lsblk mdadm/fdisk lsblk mdadm   /g' include/target.mk
-      - name: Custom profile 3
         run: |    
           sed -i 's/dnsmasq iptables ip6tables ppp ppp-mod-pppoe firewall odhcpd-ipv6only odhcp6c kmod-ipt-offload/dnsmasq-full iptables ppp ppp-mod-pppoe firewall kmod-ipt-offload kmod-tcp-bbr/g' include/target.mk
-      - name: Custom profile 4
+      - name: Custom profile 3
         run: |
   
           sed -i '09s/\(.\{1\}\)/\#/' package/network/services/uhttpd/files/uhttpd.config
-      - name: Custom profile 5
+      - name: Custom profile 4
         run: |
           sed -i '10s/\(.\{1\}\)/\#/' package/network/services/uhttpd/files/uhttpd.config
-      - name: Custom profile 6
+      - name: Custom profile 5
         run: |
           sed -i 's/option redirect_https\s1/option redirect_https   0/g' package/network/services/uhttpd/files/uhttpd.config
-      - name: Custom profile 7
+      - name: Custom profile 6
         run: |   
           sed -i '46s/\(.\{1\}\)/\#/' package/network/services/uhttpd/files/uhttpd.init
-      - name: Custom profile 8
+      - name: Custom profile 7
         run: |    
           sed -i '47s/\(.\{1\}\)/\#/' package/network/services/uhttpd/files/uhttpd.init
-      - name: Custom profile 9
+      - name: Custom profile 8
         run: |   
           sed -i '53s/\(.\{1\}\)/\#/' package/network/services/uhttpd/files/uhttpd.init
-      - name: Custom profile 10
+      - name: Custom profile 9
         run: |
           sed -i 's/16384/65536/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
-      - name: Custom profile 11
+      - name: Custom profile 10
         run: |
           sed -i 's/default "5"/default "0"/g' config/Config-images.in
       - name: 加载lean插件包
@@ -107,7 +104,7 @@ jobs:
           #
           
 
-      - name: Custom profile 12
+      - name: Custom profile 11
         run: | 
            sed -i 's/local e=require("luci.model.ipkg")/-- local e=require("luci.model.ipkg")--/g' package/lean/luci-app-frpc/luasrc/model/cbi/frp/frp.lua     
            
@@ -205,7 +202,7 @@ jobs:
              CONFIG_PACKAGE_luci-app-ttyd=y
           #  CONFIG_PACKAGE_luci-app-mwan3=y
           #  CONFIG_PACKAGE_luci-app-mwan3helper=y
-          #  CONFIG_PACKAGE_luci-app-openclash=y
+             CONFIG_PACKAGE_luci-app-openclash=y
           #  CONFIG_PACKAGE_luci-app-v2ray-server=y
           #  CONFIG_PACKAGE_luci-app-verysync=y
           #  CONFIG_PACKAGE_luci-app-webadmin=y
@@ -217,7 +214,7 @@ jobs:
           #  CONFIG_PACKAGE_luci-app-unblockneteasemusic-go=y
           #  CONFIG_PACKAGE_luci-app-unblockneteasemusic-mini=y
           #  CONFIG_PACKAGE_luci-app-qos=y
-          #  CONFIG_PACKAGE_luci-app-clash=y
+             CONFIG_PACKAGE_luci-app-clash=y
           #  CONFIG_PACKAGE_luci-app-samba=y
              CONFIG_PACKAGE_luci-app-koolproxyR=y
           #  CONFIG_PACKAGE_luci-app-advanced-reboot=y
