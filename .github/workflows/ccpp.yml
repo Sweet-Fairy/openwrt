@@ -95,9 +95,7 @@ jobs:
       - name: 拉取github插件包
         run: |   
            git clone  https://github.com/frainzy1477/luci-app-clash package/lean/luci-app-clash
-           git clone  https://github.com/vernesong/OpenClash package/lean/OpenClash
-           git clone  https://github.com/Leo-Jo/luci-app-vssr package/lean/luci-app-vssr
-           git clone  https://github.com/Leo-Jo-My/my package/my  
+           git clone  https://github.com/vernesong/OpenClash package/lean/OpenClash 
            git clone  https://github.com/Leo-Jo-My/luci-theme-leo package/luci-theme-leo 
            git clone  https://github.com/Leo-Jo/luci-app-koolproxyR package/luci-app-koolproxyR
           #          =========================================
@@ -221,7 +219,6 @@ jobs:
           #  CONFIG_PACKAGE_luci-app-qos=y
           #  CONFIG_PACKAGE_luci-app-clash=y
           #  CONFIG_PACKAGE_luci-app-samba=y
-             CONFIG_PACKAGE_luci-app-vssr=y
              CONFIG_PACKAGE_luci-app-koolproxyR=y
           #  CONFIG_PACKAGE_luci-app-advanced-reboot=y
           #  CONFIG_PACKAGE_luci-app-amule=y
