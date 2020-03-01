@@ -209,6 +209,7 @@ jobs:
           #  CONFIG_PACKAGE_luci-app-udpxy=y
           #  CONFIG_PACKAGE_luci-app-usb-printer=y
           #  CONFIG_PACKAGE_luci-app-nps=y
+             CONFIG_PACKAGE_luci-app-ssr-plus=y
           #  CONFIG_PACKAGE_luci-app-netdata=y
           #  CONFIG_PACKAGE_luci-app-unblockmusic=y
           #  CONFIG_PACKAGE_luci-app-unblockneteasemusic-go=y
